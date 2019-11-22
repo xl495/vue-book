@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Main from '../views/Main.vue'
+import Useredit from '../views/user/edit'
+import UserList from '../views/user/list'
 
 Vue.use(VueRouter)
 
@@ -8,7 +10,11 @@ const routes = [
   {
     path: '/',
     name: 'main',
-    component: Main
+    component: Main,
+    children:[
+      { path: '/user_edit', component: Useredit},
+      { path: '/user_list', component: UserList},
+    ]
   },
   {
     path: '/about',
